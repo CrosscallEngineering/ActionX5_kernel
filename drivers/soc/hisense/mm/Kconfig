@@ -1,0 +1,22 @@
+
+config USELESS_RES_RECLAIM
+	bool "reclaim the useless resource of the process"
+	default n
+	depends on MACH_HISENSE_SMARTPHONE
+	help
+	  Enable it to support reclaim useless resource by command:
+	  "echo useless > /proc/PID/reclaim"
+
+config HISENSE_SMART_SHRINK
+	bool "smart shrink memory when device running"
+	default n
+	depends on HISENSE_SHRINK_MEMORY
+	help
+	  Enable it to support smart shrink memory
+
+config HISENSE_SWAPPINESS_OPT
+	bool "optimize swap memory"
+	default n
+	depends on MACH_HISENSE_SMARTPHONE
+	help
+	  Enable it to swap anon pages to swap

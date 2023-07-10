@@ -1,0 +1,15 @@
+
+config HISENSE_ADB_BACKDOOR_CHANGE
+	bool "HISENSE_ADB_BACKDOOR_FEATURE"
+	depends on HISENSE_ADB_BACKDOOR
+	default n
+	help
+	  Implement Change Hisense USB adb backdoor feature.
+
+config HISENSE_GPIO_TRIG_EXT_CHG
+        bool "use gpio trig ext chg"
+        depends on MACH_HISENSE_SMARTPHONE
+        default n
+        help
+          Say Y to include support gpio trig ext chg feature.
+          The N  is disable ext chg feature. driver supports.

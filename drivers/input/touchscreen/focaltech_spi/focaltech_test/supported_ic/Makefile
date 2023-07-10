@@ -1,0 +1,1 @@
+obj-$(CONFIG_TOUCHSCREEN_FTS_SPI) += focaltech_test_ft8006p.o

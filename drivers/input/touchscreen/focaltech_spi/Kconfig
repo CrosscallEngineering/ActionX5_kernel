@@ -1,0 +1,54 @@
+#
+# Focaltech Touchscreen driver configuration
+#
+
+config TOUCHSCREEN_FTS_SPI
+	tristate "Focaltech Touchscreen test"
+	depends on SPI_MASTER
+	help
+	  Say Y here if you have Focaltech touch panel.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called focal_spi_ts.
+
+config TOUCHSCREEN_FTS_SPI_DIRECTORY
+	string "Focaltech ts directory name"
+	default "focaltech_spi"
+	depends on TOUCHSCREEN_FTS_SPI
+
+config FT_INCELL_CHIP
+	bool "FocalTech incell touchscreens support."
+	depends on TOUCHSCREEN_FTS_SPI
+	help
+	  Say Y here if you use a incell focaltech touchscreen.
+	  else say N
+config TOUCHSCREEN_FT8006P_FW_FOR_HNR552T
+	bool "FocalTech touchscreens FW for HNR552T&HNR551T."
+	depends on TOUCHSCREEN_FTS_SPI
+	help
+	  Say Y here if you use FW for HNR552T&HNR551T project.
+	  else say N
+
+config TOUCHSCREEN_FT8006P_SPI_FH
+	bool "FocalTech touchscreens FH support."
+	depends on TOUCHSCREEN_FTS_SPI
+	help
+	  Say Y here if you need a ft5X06 touchscreen FH function.
+	  else say N
+
+config TOUCHSCREEN_FT8006P_SPI_GESTURE
+	bool "FocalTech touchscreens gesture function"
+	depends on TOUCHSCREEN_FTS_SPI
+	help
+	  Say Y here if you need a ft8006p touchscreen gesture function.
+	  else say N
+
+config TOUCHSCREEN_FT8006P_SPI_GLOVE
+	bool "FocalTech touchscreens glove mode function realized in driver"
+	depends on TOUCHSCREEN_FTS_SPI
+	help
+	  Say Y here if you need a ft8xxx glove mode in driver.
+	  else say N
+

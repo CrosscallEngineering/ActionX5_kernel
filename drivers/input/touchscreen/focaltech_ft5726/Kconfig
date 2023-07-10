@@ -1,0 +1,90 @@
+#
+# Focaltech Touchscreen driver configuration
+#
+
+config FT_INCELL_CHIP
+	bool "FocalTech touchscreens incell chip support."
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 touchscreen FH function.
+	  else say N
+
+config TOUCHSCREEN_FT5726_IRQ_WAKE
+	bool "FocalTech touchscreens dont register .pm"
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 touchscreen dont register .pm.
+	  else say N
+
+config TOUCHSCREEN_FT5726_FH
+	bool "FocalTech touchscreens FH support."
+	depends on TOUCHSCREEN_USB_CHECK && TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 touchscreen FH function.
+	  else say N
+
+config TOUCHSCREEN_FT5726_GESTURE
+	bool "FocalTech touchscreens gesture function"
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 touchscreen gesture function.
+	  else say N
+
+config TOUCHSCREEN_FT5726_GESTURE_DRIVER
+	bool "FocalTech touchscreens gesture function realized in driver"
+	depends on TOUCHSCREEN_FT5726_GESTURE
+	help
+	  Say Y here if you need a FT5726 touchscreen gesture function in driver.
+	  else say N
+	 
+config TOUCHSCREEN_FACE_DETECTION
+	bool "FocalTech touchscreens face detection function realized in driver"
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 touchscreen gesture function in driver.
+	  else say N
+
+config TOUCHSCREEN_FT5726_GLOVE
+	bool "FocalTech touchscreens glove mode function realized in driver"
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 glove mode in driver.
+	  else say N
+
+config TOUCHSCREEN_FT5726_HALL
+	bool "FocalTech touchscreens hall mode function realized in driver"
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 hall mode in driver.
+	  else say N
+
+config TOUCHSCREEN_FT5726_PRAMUPDATE
+	bool "FocalTech touchscreens ft8719 pramboot data in driver"
+	depends on TOUCHSCREEN_FT5726
+	default n
+	help
+	  Say Y here if you need a ft8719 pramboot data in driver.
+	  else say N
+
+config TOUCHSCREEN_FT5726_APK_TEST
+	bool "FocalTech touchscreens apk test function realized in driver"
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 apk test in driver.
+	  else say N
+
+config TOUCHSCREEN_FT5726_SUB
+	bool "FocalTech touchscreens sub function realized in driver"
+	depends on TOUCHSCREEN_FT5726
+	help
+	  Say Y here if you need a FT5726 as sub TP in driver.
+	  else say N
+
+config TOUCHSCREEN_FT5726_PSENSOR
+	tristate "FocalTech proximity feature support"
+	depends on TOUCHSCREEN_FT5726 && SENSORS
+	help
+	  Say Y here if you want to support FT5726's proximity
+	  feature.
+
+	  If unsure, say N.

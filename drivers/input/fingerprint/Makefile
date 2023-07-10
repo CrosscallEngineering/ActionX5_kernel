@@ -1,0 +1,3 @@
+obj-$(CONFIG_FINGERPRINT_SUNWAVE) += sunwave_fp/
+obj-$(CONFIG_FINGERPRINT_CHIPONE) += chipone/
+obj-$(CONFIG_FINGERPRINT_FPC_FPC1542) += fpc/

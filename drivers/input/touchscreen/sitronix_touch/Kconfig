@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# STMicroelectronics touchscreen driver configuration
+#
+
+config TOUCHSCREEN_SITRONIX_TS
+	tristate "sitronix_ts Touchscreen test"
+	depends on I2C
+	help
+	  Say Y here if you have sitronix_ts touch panel.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called focal_spi_ts.
+config TOUCHSCREEN_SITRONIX_TS_POWER_SUPPLY_EN
+	bool "sitronix_ts itouchscreens support."
+	depends on TOUCHSCREEN_SITRONIX_TS
+	help
+	  Say Y here if you use a power supply sitronix_ts touchscreen.
+	  else say N
+config TOUCHSCREEN_SITRONIX_TS_GLOVE
+	bool "sitronix_ts itouchscreens support."
+	depends on TOUCHSCREEN_SITRONIX_TS
+	help
+	  Say Y here if you use a power supply sitronix_ts touchscreen.
+	  else say N
+config TOUCHSCREEN_SITRONIX_TS_L762
+	bool "sitronix_ts itouchscreens support."
+	depends on TOUCHSCREEN_SITRONIX_TS
+	help
+	  Say Y here if you use l762 fw supply sitronix_ts touchscreen.
+	  else say N
+config TOUCHSCREEN_SITRONIX_TS_GESTURE
+	bool "sitronix_ts itouchscreens support."
+	depends on TOUCHSCREEN_SITRONIX_TS
+	help
+	  Say Y here if you use gesture supply sitronix_ts touchscreen.
+	  else say N

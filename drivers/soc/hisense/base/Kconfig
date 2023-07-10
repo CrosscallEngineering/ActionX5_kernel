@@ -1,0 +1,68 @@
+comment "Hisense product Infomation"
+config MACH_HISENSE_SMARTPHONE
+	bool "HISENSE SMARTPHONE"
+	default n
+	help
+	  Support for the hisense samrtphone board.
+
+config HISENSE_BOOT_FLOW
+	bool "Hisense boot flow"
+	default n
+	help
+	  Provide a methed for panic handle.
+
+config HISENSE_VENDOR_NAME
+	depends on MACH_HISENSE_SMARTPHONE
+	string "Hisense vendor info"
+	default ""
+	help
+	  The vendor name of product.
+
+config HISENSE_PRODUCT_NAME
+	depends on MACH_HISENSE_SMARTPHONE
+	string "Hisense product info"
+	default ""
+	help
+	  The product name.
+
+config HISENSE_PLATFORM_NAME
+	depends on MACH_HISENSE_SMARTPHONE
+	string "Hisense platform info"
+	default ""
+	help
+	  The platform name.
+
+config HISENSE_BOOT_INFO
+	bool "Hisense Boot information"
+	depends on MACH_HISENSE_SMARTPHONE
+	default y
+	help
+	  The information of booting system.
+
+config HISENSE_DEBUG_CTRL
+	bool "Hisense debug method"
+	depends on MACH_HISENSE_SMARTPHONE
+	default y
+	help
+	  Say Y when you need debug your device.
+
+config HIDE_COMPILE_HOST
+	bool "set LINUX_COMPILE_HOST to a fixed string"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	  To hide the real compile host name, if unsure, say N.
+
+config DONOT_USE_SETUP
+	bool "do not use __setup macro get bootmode"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	  If say N, use __setup macro get bootmode.
+
+config HISENSE_SYSTEM_32BIT
+	bool "Hisense 32bit system"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	  The feature of 32bit system.

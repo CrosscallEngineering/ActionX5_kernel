@@ -1,0 +1,27 @@
+config SDCARD_FS
+	tristate "sdcard file system"
+	depends on CONFIGFS_FS
+	default n
+	help
+	  Sdcardfs is based on Wrapfs file system.
+
+config SDCARD_FS_FADV_NOACTIVE
+	bool "sdcardfs fadvise noactive support"
+	depends on FADV_NOACTIVE
+	default y
+	help
+	  Sdcardfs supports fadvise noactive mode.
+
+config MULTI_USER_ID
+	bool "resolve permission between multi user id"
+	depends on SDCARD_FS
+	default y
+	help
+	  Sdcardfs supports multi user can read/write same files and dirs.
+
+config SDCARD_FS_BYPASS_PERM_CHECK
+	bool "allow specail apps to bypass permission-check to access to sdcardfs"
+	depends on SDCARD_FS
+	default y
+	help
+	  Sdcardfs supports bypass permission-check to access to sdcard.

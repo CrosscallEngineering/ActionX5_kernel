@@ -1,0 +1,69 @@
+
+config HISENSE_CHARGE_FG_FUNCTION
+	bool "Add the hisense charge/fg driver"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	  Add the hisense charge function.Such as smb-charger,fg and so on.
+
+config HISENSE_CHARGE_PARALLEL_FUNCTION
+	bool "Add the hisense parallel feature"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	  Add the hisense parallel charge function.
+
+config HISENSE_WEAK_CHARGER
+	bool "Add the WEAK charger or line support"
+	depends on HISENSE_CHARGE_FG_FUNCTION
+	default n
+	help
+	  Add weak charger or line support.
+
+config COMP_MULTI_PROFILE
+	bool "multi profile load depend on batt_id"
+	depends on OF_BATTERYDATA && MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	 y to use batt id select battery profile.
+	 n not using batt id select battery profile.
+
+config HISENSE_TYPEC_OTG_CONTROL_FUNCTION
+	bool "type c OTG control"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	 y to use type c OTG control.
+	 n not using type c OTG control.
+
+config HISENSE_BATTERY_THERM_NTC_10K
+	bool "using battery thermal 10k ntc"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	 y to use 10k ntc.
+	 n to use default 100k ntc.
+
+config HISENSE_GPIO_TRIG_OTG
+	bool "use gpio trigger otg mode"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	 y to use gpio trigger otg mode.
+	 n not using gpio to trigger otg.
+
+config HISENSE_TYPEC_POGO_PEN
+	bool "use pogo pen feature ode"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	 y to use pogo pen feature
+	 n not using pogo pen/gpio to trigger otg.
+
+config HISENSE_UKL_SAFE_MODE_FUNCTION
+	bool "use safe mode(long charge mode)"
+	depends on MACH_HISENSE_SMARTPHONE
+	default n
+	help
+	 y to use safe mode feature
+	 n not using safe (long) charge mode.

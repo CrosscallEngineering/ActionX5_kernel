@@ -1,0 +1,39 @@
+#
+# SPRD Sensor Hub drivers configuration
+#
+
+menu "Hisense sensors device support"
+	depends on SENSORS
+
+config HS_SNS_AP_ALS_PS
+	tristate "Hisense sensors device support"
+	help
+	  Support AP ALSPS Sensor Feature
+
+	  Say Y here to build support for AP alsps.
+	  To compile this driver as a module, choose M here
+
+config HS_SNS_CM36781
+	tristate "Capella cm36781 device support"
+	depends on HS_SNS_AP_ALS_PS
+	help
+          Support capella cm36781 ALSPS Sensor Feature
+
+          Say Y here to build support for cm36781 alsps.
+          To compile this driver as a module, choose M here
+
+config HS_SNS_CM36781_USE_VDD_EN_GPIO
+	bool "Capella cm36781 device support USE VDD EN GPIO"
+	depends on HS_SNS_CM36781
+	help
+	  Say Y here if you need a Capella cm36781 device support USE VDD EN GPIO.
+	  else say N
+
+config HS_SNS_HALL
+	bool "Provide Hall Device Support"
+	default n
+	depends on HS_SNS_AP_ALS_PS
+	help
+	  Say Y here, select hall chip .
+
+endmenu
